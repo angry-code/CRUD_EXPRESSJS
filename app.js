@@ -6,6 +6,7 @@ var logger = require('morgan');
 const bodyParser = require("body-parser");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var accRouter = require("./routes/acc_index")
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/acc', accRouter)
 
 // /json
 app.use(bodyParser.json());
